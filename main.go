@@ -22,7 +22,8 @@ func main() {
 		handler = c.Handler(router)
 	}
 
-	err := http.ListenAndServe("localhost:8080", handler)
+	log.Println("starting server")
+	err := http.ListenAndServe(":5000", handler)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
